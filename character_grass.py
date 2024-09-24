@@ -66,9 +66,39 @@ def run_circle():
     
     pass
 
+def run_leftside():
+    print('LEFTSIDE')
+
+    for i in range(0, 300, 10):
+        x = i+100
+        y = i*2
+
+        draw_boy(x, y)
+
+def run_rightside():
+    print('RIGHTSIDE')
+    x, y = 400, 600
+    
+    while(x<600):
+        x = x+10
+        y = y-20
+        
+
+        draw_boy(x, y)
+
+def run_triangle():
+    print('TRIANGLE')
+
+    run_leftside()
+    run_rightside()
+    run_bottom()
+
+    pass
+
 while True:
-    # run_circle()
+    run_circle()
     run_rectangle()
+    run_triangle()
     break
 
 
