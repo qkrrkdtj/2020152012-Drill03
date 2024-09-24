@@ -1,4 +1,5 @@
 from pico2d import *
+import math
 
 open_canvas()
 
@@ -13,9 +14,16 @@ def run_rectangle():
 def run_circle():
     print('CIRCLE')
 
-    clear_canvas_now()
-    boy.draw_now(400,0)
-    delay(1)
+    r, cx, cy = 300, 800 // 2, 600 // 2
+
+    for d in range(0, 360):
+        x = r * math.cos(math.radians(d)) + cx
+        y = r * math.sin(math.radians(d)) + cy
+        
+        clear_canvas_now()
+        boy.draw_now(x, y)
+        delay(0.1)
+    
     pass
 
 while True:
